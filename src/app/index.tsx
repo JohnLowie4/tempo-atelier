@@ -34,8 +34,8 @@ export default function HomeScreen() {
       <SafeAreaView style={styles.safeArea}>
         <ThemedView style={styles.heroSection}>
           <AnimatedIcon />
-          <ThemedText type="title" style={styles.title}>
-            Welcome to&nbsp;Expo
+          <ThemedText type="title" className="text-sm">
+            Hello World
           </ThemedText>
         </ThemedView>
 
