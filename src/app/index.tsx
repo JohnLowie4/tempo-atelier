@@ -1,27 +1,12 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function HomeScreen() {
   return (
-    <View style={styles.container}>
-      <SafeAreaView style={styles.safeArea}>
-        <Text style={styles.title}>Tempo Atelier</Text>
+    <View className="flex-1">
+      <SafeAreaView className="flex-1 items-center justify-center">
+        <Text className="text-[32px] font-semibold">Tempo Atelier</Text>
       </SafeAreaView>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  safeArea: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 32,
-    fontWeight: '600',
-  },
-});
