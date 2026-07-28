@@ -3,6 +3,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useColorScheme } from 'react-native';
 
 import HomeScreen from '@/app/index';
+import { AppProvider } from '@/context/app-context';
 
 import '@/global.css';
 
@@ -12,7 +13,9 @@ export default function TabLayout() {
   const colorScheme = useColorScheme();
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <HomeScreen />
+      <AppProvider>
+        <HomeScreen />
+      </AppProvider>
     </ThemeProvider>
   );
 }
