@@ -5,7 +5,7 @@ export default function HomeScreen() {
   return (
     <View className="flex-1">
       <SafeAreaView className="flex-1 items-center justify-center">
-        <Text className="text-[32px] font-semibold">Tempo Atelier</Text>
+        <Text className="font-sans-semibold text-[32px]">Tempo Atelier</Text>
       </SafeAreaView>
     </View>
   );

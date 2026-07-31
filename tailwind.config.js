@@ -5,6 +5,17 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   presets: [require("nativewind/preset")],
-  theme: { extend: {} },
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ["SpaceGrotesk_400Regular", "Space Grotesk", "system-ui", "sans-serif"],
+        "sans-medium": ["SpaceGrotesk_500Medium", "Space Grotesk", "system-ui", "sans-serif"],
+        "sans-semibold": ["SpaceGrotesk_600SemiBold", "Space Grotesk", "system-ui", "sans-serif"],
+        "sans-bold": ["SpaceGrotesk_700Bold", "Space Grotesk", "system-ui", "sans-serif"],
+        serif: ["PlayfairDisplay_400Regular", "Playfair Display", "Georgia", "serif"],
+        "serif-bold": ["PlayfairDisplay_700Bold", "Playfair Display", "Georgia", "serif"],
+      },
+    },
+  },
   plugins: [],
 };

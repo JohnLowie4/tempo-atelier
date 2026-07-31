@@ -1,20 +1,53 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { useColorScheme } from 'react-native';
+import {
+  PlayfairDisplay_400Regular,
+  PlayfairDisplay_700Bold,
+} from "@expo-google-fonts/playfair-display";
+import {
+  SpaceGrotesk_400Regular,
+  SpaceGrotesk_500Medium,
+  SpaceGrotesk_600SemiBold,
+  SpaceGrotesk_700Bold,
+} from "@expo-google-fonts/space-grotesk";
+import { DarkTheme, DefaultTheme, ThemeProvider } from "expo-router";
+import { useFonts } from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
+import { useEffect } from "react";
+import { useColorScheme, View } from "react-native";
 
-import HomeScreen from '@/app/index';
-import { AppProvider } from '@/context/app-context';
+import HomeScreen from "@/app/index";
+import { AppProvider } from "@/context/app-context";
 
-import '@/global.css';
+import "@/global.css";
 
 SplashScreen.preventAutoHideAsync();
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
+  const [fontsLoaded, fontError] = useFonts({
+    SpaceGrotesk_400Regular,
+    SpaceGrotesk_500Medium,
+    SpaceGrotesk_600SemiBold,
+    SpaceGrotesk_700Bold,
+    PlayfairDisplay_400Regular,
+    PlayfairDisplay_700Bold,
+  });
+
+  useEffect(() => {
+    if (fontsLoaded || fontError) {
+      SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded, fontError]);
+
+  if (!fontsLoaded && !fontError) {
+    return null;
+  }
+
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+    <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
       <AppProvider>
-        <HomeScreen />
+        <View className="flex-1 font-sans">
+          <HomeScreen />
+        </View>
       </AppProvider>
     </ThemeProvider>
   );
