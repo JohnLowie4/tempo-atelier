@@ -18,7 +18,7 @@ export const Colors = {
   },
   dark: {
     textPrimary: "#f4f4f4",
-    textSecondary: "##707070",
+    textSecondary: "#707070",
     background: "#080808",
     backgroundSecondary: "#121212",
   },

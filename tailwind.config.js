@@ -7,6 +7,12 @@ module.exports = {
   presets: [require("nativewind/preset")],
   theme: {
     extend: {
+      colors: {
+        background: "#080808",
+        "background-secondary": "#121212",
+        "text-primary": "#f4f4f4",
+        "text-secondary": "#707070",
+      },
       fontFamily: {
         sans: ["SpaceGrotesk_400Regular", "Space Grotesk", "system-ui", "sans-serif"],
         "sans-medium": ["SpaceGrotesk_500Medium", "Space Grotesk", "system-ui", "sans-serif"],
