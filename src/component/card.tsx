@@ -10,9 +10,9 @@ export function Card() {
     <GlassView
       glassEffectStyle="regular"
       colorScheme="dark"
-      className="mx-4 overflow-hidden rounded-3xl border border-white/10 bg-background-secondary/60 px-6 py-8"
+      className="overflow-hidden rounded-3xl border border-white/10 bg-background-secondary/60"
     >
-      <View className="items-center">
+      <View className="items-center px-6 pb-6 pt-8">
         <Text className="font-sans-bold text-[80px] leading-none text-text-primary">
           {bpm}
         </Text>
@@ -21,11 +21,11 @@ export function Card() {
         </Text>
       </View>
 
-      <View className="mt-8 flex-row justify-center gap-2">
+      <View className="w-full flex-row gap-2 px-6 pb-6">
         {Array.from({ length: timeSignature }, (_, index) => (
           <View
             key={index}
-            className="h-1.5 w-8 rounded-full bg-text-primary/40"
+            className="h-1.5 flex-1 rounded-full bg-text-primary/40"
           />
         ))}
       </View>
