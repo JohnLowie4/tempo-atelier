@@ -4,8 +4,8 @@ import {
   SpaceGrotesk_600SemiBold,
   SpaceGrotesk_700Bold,
 } from "@expo-google-fonts/space-grotesk";
-import { DarkTheme, DefaultTheme, ThemeProvider } from "expo-router";
 import { useFonts } from "expo-font";
+import { DarkTheme, DefaultTheme, ThemeProvider } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import { useColorScheme, View } from "react-native";
