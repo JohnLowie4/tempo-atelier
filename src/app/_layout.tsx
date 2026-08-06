@@ -1,8 +1,4 @@
 import {
-  PlayfairDisplay_400Regular,
-  PlayfairDisplay_700Bold,
-} from "@expo-google-fonts/playfair-display";
-import {
   SpaceGrotesk_400Regular,
   SpaceGrotesk_500Medium,
   SpaceGrotesk_600SemiBold,
@@ -28,8 +24,6 @@ export default function TabLayout() {
     SpaceGrotesk_500Medium,
     SpaceGrotesk_600SemiBold,
     SpaceGrotesk_700Bold,
-    PlayfairDisplay_400Regular,
-    PlayfairDisplay_700Bold,
   });
 
   useEffect(() => {

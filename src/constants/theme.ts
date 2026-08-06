@@ -32,24 +32,19 @@ export const FontFamily = {
   primaryMedium: "SpaceGrotesk_500Medium",
   primarySemibold: "SpaceGrotesk_600SemiBold",
   primaryBold: "SpaceGrotesk_700Bold",
-  secondary: "PlayfairDisplay_400Regular",
-  secondaryBold: "PlayfairDisplay_700Bold",
 } as const;
 
-/** CSS / web font stacks — also exposed as Tailwind `font-sans` and `font-serif` */
+/** CSS / web font stacks — also exposed as Tailwind `font-sans` */
 export const FontStacks = {
   primary: "'Space Grotesk', system-ui, sans-serif",
-  secondary: "'Playfair Display', Georgia, serif",
 } as const;
 
 export const Fonts = Platform.select({
   web: {
     primary: FontStacks.primary,
-    secondary: FontStacks.secondary,
   },
   default: {
     primary: FontFamily.primary,
-    secondary: FontFamily.secondary,
   },
 })!;
 

@@ -9,9 +9,6 @@ export default function HomeScreen() {
         <Text className="font-sans-semibold text-[16px] text-text-primary">
           Primary Font: Space Grotesk
         </Text>
-        <Text className="font-serif-bold text-[16px] text-text-secondary">
-          Secondary Font: Playfair Display
-        </Text>
       </SafeAreaView>
     </View>
   );
