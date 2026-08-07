@@ -1,5 +1,5 @@
 import { GlassView } from "expo-glass-effect";
-import { Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 import { useApp } from "@/context/app-context";
 
@@ -8,9 +8,13 @@ export function Card() {
 
   return (
     <GlassView
-      glassEffectStyle="regular"
+      glassEffectStyle={{
+        style: "regular",
+        animate: true,
+        animationDuration: 0.5,
+      }}
       colorScheme="dark"
-      className="overflow-hidden rounded-3xl border border-white/10 bg-background-secondary/60"
+      style={styles.glassView}
     >
       <View className="items-center px-6 pb-6 pt-8">
         <Text className="font-sans-bold text-[80px] leading-none text-text-primary">
@@ -32,3 +36,13 @@ export function Card() {
     </GlassView>
   );
 }
+
+const styles = StyleSheet.create({
+  glassView: {
+    overflow: "hidden",
+    borderRadius: 24,
+    borderWidth: 2,
+    borderColor: "rgba(255, 255, 255, 0.1)",
+    backgroundColor: "rgba(18, 18, 18, 0.6)",
+  },
+});
