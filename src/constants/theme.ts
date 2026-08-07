@@ -3,53 +3,50 @@
  * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
  */
 
-import '@/global.css';
+import "@/global.css";
 
-import { Platform } from 'react-native';
+import { Platform } from "react-native";
 
 export const Colors = {
   light: {
-    text: '#000000',
-    background: '#ffffff',
-    backgroundElement: '#F0F0F3',
-    backgroundSelected: '#E0E1E6',
-    textSecondary: '#60646C',
+    // We will focus on dark theme for now
+    text: "#000000",
+    background: "#ffffff",
+    backgroundElement: "#F0F0F3",
+    backgroundSelected: "#E0E1E6",
+    textSecondary: "#60646C",
   },
   dark: {
-    text: '#ffffff',
-    background: '#000000',
-    backgroundElement: '#212225',
-    backgroundSelected: '#2E3135',
-    textSecondary: '#B0B4BA',
+    textPrimary: "#f4f4f4",
+    textSecondary: "#707070",
+    background: "#080808",
+    backgroundSecondary: "#121212",
   },
 } as const;
 
 export type ThemeColor = keyof typeof Colors.light & keyof typeof Colors.dark;
 
+/** Loaded via expo-font in _layout.tsx — use for inline styles on native */
+export const FontFamily = {
+  primary: "SpaceGrotesk_400Regular",
+  primaryMedium: "SpaceGrotesk_500Medium",
+  primarySemibold: "SpaceGrotesk_600SemiBold",
+  primaryBold: "SpaceGrotesk_700Bold",
+} as const;
+
+/** CSS / web font stacks — also exposed as Tailwind `font-sans` */
+export const FontStacks = {
+  primary: "'Space Grotesk', system-ui, sans-serif",
+} as const;
+
 export const Fonts = Platform.select({
-  ios: {
-    /** iOS `UIFontDescriptorSystemDesignDefault` */
-    sans: 'system-ui',
-    /** iOS `UIFontDescriptorSystemDesignSerif` */
-    serif: 'ui-serif',
-    /** iOS `UIFontDescriptorSystemDesignRounded` */
-    rounded: 'ui-rounded',
-    /** iOS `UIFontDescriptorSystemDesignMonospaced` */
-    mono: 'ui-monospace',
+  web: {
+    primary: FontStacks.primary,
   },
   default: {
-    sans: 'normal',
-    serif: 'serif',
-    rounded: 'normal',
-    mono: 'monospace',
+    primary: FontFamily.primary,
   },
-  web: {
-    sans: 'var(--font-display)',
-    serif: 'var(--font-serif)',
-    rounded: 'var(--font-rounded)',
-    mono: 'var(--font-mono)',
-  },
-});
+})!;
 
 export const Spacing = {
   half: 2,

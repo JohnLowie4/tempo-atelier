@@ -1,11 +1,17 @@
-import { Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+
+import { Card } from "@/component/card";
+import { ControlBar } from "@/component/control-bar";
 
 export default function HomeScreen() {
   return (
-    <View className="flex-1">
-      <SafeAreaView className="flex-1 items-center justify-center">
-        <Text className="text-[32px] font-semibold">Tempo Atelier</Text>
+    <View className="flex-1 bg-background">
+      <SafeAreaView className="flex-1 bg-background px-4 pb-4 pt-4">
+        <View className="flex-1">
+          <Card />
+        </View>
+        <ControlBar />
       </SafeAreaView>
     </View>
   );
